@@ -26,6 +26,7 @@ int main () {
         cout << "Jogador 2 venceu!" << endl;
     }
 
+
     return 0;
 
 }
@@ -41,4 +42,6 @@ Papel contesta Spock = 2 contesta 5
 Spock vaporiza pedra = 5 vaporiza 1 ok
 Pedra quebra tesoura = 1 queba 3 ok
 pedra = 1papel = 2
-tesoura = 3lagarto = 4spock = 5*/
+tesoura = 3lagarto = 4spock = 5
+
+*/
