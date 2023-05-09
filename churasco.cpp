@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// quantidade de carne por pessoa
 #define CH 300 // 300g de carne por homem
 #define CM 250 // 250g de carne por mulher
 #define CC 150 // 150g de carne por criança
@@ -9,18 +10,29 @@ using namespace std;
 int main()
 {
 
-  int criancas, mulheres, homens;
-  float TotalDeCarne;
-  float ValCarne;
+  float criancas, mulheres, homens;
+  float TotalDeCarne; // total de carne
+  float ValCarne;     // valor da carne
   float Total;
-  int r1, r2;
+  float pgM;   // crinaças pagantes
+  float pgC;   // crianças pagantes
+  float pgH;   // Homens pagantes
+  char r1, r2; // resposta 1 e resposta 2
 
-  cout << ("qual a quantidade de homens ? ") << endl;
-  cin >> homens;
-  cout << ("qual a quantidade de mulheres ? ") << endl;
-  cin >> mulheres;
-  cout << ("qual a quantidade de criancas ? ") << endl;
-  cin >> criancas;
+  do
+  {
+    cout << ("qual a quantidade de homens ? ") << endl;
+    cin >> homens;
+    cout << ("qual a quantidade de mulheres ? ") << endl;
+    cin >> mulheres;
+    cout << ("qual a quantidade de criancas ? ") << endl;
+    cin >> criancas;
+
+    if (mulheres < 0 || homens < 0 || criancas < 0)
+    {
+      cout << "ERRO!" << endl;
+    }
+  } while (mulheres < 0 || homens < 0 || criancas < 0);
 
   cout << ("Qual o valor do kg da carne? R$: ") << endl;
   cin >> ValCarne;
@@ -38,12 +50,10 @@ int main()
   {
     pgC = 0;
   }
-  cout << ("mulheres pagam ? (s/n) ");
+  cout << ("mulheres pagam ? (s/n)") << endl;
   cin >> r2;
-
   if (r2 == 's')
   {
-
     pgM = 0;
     pgH = Total / homens;
   }
@@ -54,6 +64,7 @@ int main()
 
     cout << ("valor total por pessoa e R$ ") << pgH;
   }
+
   return 0;
 }
 
