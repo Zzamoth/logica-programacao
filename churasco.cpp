@@ -19,7 +19,7 @@ int main()
   float pgH;   // Homens pagantes
   char r1, r2; // resposta 1 e resposta 2
 
-  do
+  do // roda o codigo
   {
     cout << ("qual a quantidade de homens ? ") << endl;
     cin >> homens;
@@ -32,7 +32,7 @@ int main()
     {
       cout << "ERRO!" << endl;
     }
-  } while (mulheres < 0 || homens < 0 || criancas < 0);
+  } while (mulheres < 0 || homens < 0 || criancas < 0); // repete o coigo com uma condição
 
   cout << ("Qual o valor do kg da carne? R$: ") << endl;
   cin >> ValCarne;
@@ -67,17 +67,3 @@ int main()
 
   return 0;
 }
-
-/*
-    c= criançasTotal
-    h= homens
-    m= mulheres
-    ct = total
-    tc = total de carne
-    $carne: Valor Da Carne
-    Fpagante
-    Cpagante
-  */
-
-/*  diga que homem, mulher, crianca tem que ser >= 0
-se for menor <0 diga "numero invalido digite nivamente" */

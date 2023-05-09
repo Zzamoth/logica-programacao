@@ -44,7 +44,7 @@ int main()
      {cout << ("inapto/n ");
 
      }else (sexo == 'm' )
-    {cout << ("servir");
+    { cout << ("servir");
 
     }else 
       cout << ("n servir");
