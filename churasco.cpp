@@ -15,7 +15,7 @@ int main()
   float TotalDeCarne; // total de carne
   float ValCarne;     // valor da carne
   float Total;
-  float pgM;   // crinaças pagantes
+  float pgM;   // Mulheres pagantes
   float pgC;   // crianças pagantes
   float pgH;   // Homens pagantes
   char r1, r2; // resposta 1 e resposta 2
