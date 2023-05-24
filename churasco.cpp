@@ -24,7 +24,7 @@ int main()
   cout << ("deseja calcular quantos churrascos: ");
   cin >> repetir;
 
-  for (int i = 0; i <= repetir; i++)
+  for (int i = 0; i < repetir; i++)
   {
     do // roda o codigo
     {
