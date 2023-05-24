@@ -7,24 +7,21 @@ using namespace std;
 #define CM 250 // 250g de carne por mulher
 #define CC 150 // 150g de carne por criança
 
-
 int main()
 {
 
   float criancas, mulheres, homens;
   float TotalDeCarne; // total de carne
   float ValCarne;     // valor da carne
-  float Total;
-  float pgM;   // Mulheres pagantes
-  float pgC;   // crianças pagantes
-  float pgH;   // Homens pagantes
-  char r1, r2; // resposta 1 e resposta 2
+  float Total;      // valor total do churasco
+  float pgTot = 0; // Total a ser pago
+  char r1, r2;     // resposta 1 e resposta 2
   int repetir;
 
-  cout << ("deseja calcular quantos churrascos: ");
-  cin >> repetir;
+  cout << ("deseja calcular quantos churrascos: "); // entrada
+  cin >> repetir; // saida
 
-  for (int i = 0; i < repetir; i++)
+  for (int i = 0; i < repetir; i++) // repete o codigo inteiro quantas vezes desejar 
   {
     do // roda o codigo
     {
@@ -35,7 +32,7 @@ int main()
       cout << ("qual a quantidade de criancas ? ") << endl;
       cin >> criancas;
 
-      if (mulheres < 0 || homens < 0 || criancas < 0)
+      if (mulheres < 0 || homens < 0 || criancas < 0) // verifica se as variaves são menores que 0
       {
         cout << "ERRO!" << endl;
       }
@@ -44,7 +41,7 @@ int main()
     cout << ("Qual o valor do kg da carne? R$: ") << endl;
     cin >> ValCarne;
 
-    TotalDeCarne = (homens * CH) + (mulheres * CM) + (criancas * CC);
+    TotalDeCarne = (homens * CH) + (mulheres * CM) + (criancas * CC); // calcula 
     TotalDeCarne = TotalDeCarne / 1000;
     cout << ("Quantidade de carne total do churasco: ") << TotalDeCarne << endl;
     Total = TotalDeCarne * ValCarne;
@@ -52,25 +49,26 @@ int main()
 
     cout << ("crianca paga ?(s/n) ");
     cin >> r1;
-
-    if (r1 == 'n')
-    {
-      pgC = 0;
-    }
     cout << ("mulheres pagam ? (s/n)") << endl;
     cin >> r2;
-    if (r2 == 's')
+
+    if (r1 == 'n' && r2 == 'n')
     {
-      pgM = 0;
-      pgH = Total / homens;
+      pgTot = Total / homens;
+    }
+    else if (r1 == 's' && r2 == 'n')
+    {
+      pgTot = Total / (homens + criancas);
+    }
+    else if (r1 == 'n' && r2 == 's')
+    {
+      pgTot = Total / (homens + mulheres);
     }
     else
     {
-      pgM = Total / (criancas + mulheres);
-      pgH = pgM;
-
-      cout << ("valor total por pessoa e R$ ") << pgH;
+      pgTot = Total / (homens + mulheres + criancas);
     }
+    cout << ("valor total por pessoa e R$ ") << pgTot;
   }
   return 0;
 }
