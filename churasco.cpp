@@ -14,16 +14,14 @@ int main()
   float TotalDeCarne; // total de carne
   float ValCarne;     // valor da carne
   float Total;
-  float pgM;   // crinaças pagantes
-  float pgC;   // crianças pagantes
-  float pgH;   // Homens pagantes
-  char r1, r2; // resposta 1 e resposta 2
+  float pgTot = 0; // Total a ser pago
+  char r1, r2;     // resposta 1 e resposta 2
   int repetir;
 
   cout << ("deseja calcular quantos churrascos: ");
   cin >> repetir;
 
-  for (int i = 0; i <= repetir; i++)
+  for (int i = 0; i < repetir; i++)
   {
     do // roda o codigo
     {
@@ -51,25 +49,26 @@ int main()
 
     cout << ("crianca paga ?(s/n) ");
     cin >> r1;
-
-    if (r1 == 'n')
-    {
-      pgC = 0;
-    }
     cout << ("mulheres pagam ? (s/n)") << endl;
     cin >> r2;
-    if (r2 == 's')
+
+    if (r1 == 'n' && r2 == 'n')
     {
-      pgM = 0;
-      pgH = Total / homens;
+      pgTot = Total / homens;
+    }
+    else if (r1 == 's' && r2 == 'n')
+    {
+      pgTot = Total / (homens + criancas);
+    }
+    else if (r1 == 'n' && r2 == 's')
+    {
+      pgTot = Total / (homens + mulheres);
     }
     else
     {
-      pgM = Total / (criancas + mulheres);
-      pgH = pgM;
-
-      cout << ("valor total por pessoa e R$ ") << pgH;
+      pgTot = Total / (homens + mulheres + criancas);
     }
+    cout << ("valor total por pessoa e R$ ") << pgTot;
   }
   return 0;
 }
